@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Routes, Route, useNavigate, /*useSearchParams*/ } from 'react-router-dom';
-import { Menu, X, UserCircle, Rocket } from 'lucide-react';
+import { Menu, X, UserCircle, Rocket, Home } from 'lucide-react';
 import { useAuth } from './contexts/AuthContext';
 import Profile from './pages/Profile';
 import Register from './pages/Register';
 import RegistrationSuccess from './pages/RegistrationSuccess';
+import HomeComponent from './components/Home';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <Routes>
+      
       <Route
         path="/"
         element={
@@ -213,6 +215,7 @@ function App() {
         }
       />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/Home" element={<HomeComponent />} />
       <Route path="/register" element={<Register />} />
       <Route path="/filled" element={<RegistrationSuccess />} />
     </Routes>
