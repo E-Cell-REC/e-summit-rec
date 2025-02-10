@@ -4,29 +4,25 @@ import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../lib/supabase';
 import { IndianRupee } from 'lucide-react';
 
-interface FormErrors {
-  full_name?: string;
-  email?: string;
-  phone?: string;
-  institution?: string;
-  profession?: string;
-  tshirt_size?: string;
-  location?: string;
-  transaction_id?: string;
-}
+// interface Profile {
+//   full_name: string;
+//   email: string;
+// }
+
 
 export default function Register() {
   const { user } = useAuth();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
+  // const [profile, setProfile] = useState<Profile>({ full_name: '', email: '' });
   const [qrCode, setQrCode] = useState<string | null>(null);
   const [transactionId, setTransactionId] = useState('');
-  const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [formData, setFormData] = useState({
     phone: '',
-    email: '',
     full_name: '',
+    email: '',
     institution: '',
     profession: '',
     tshirt_size: '',
@@ -40,100 +36,51 @@ export default function Register() {
       return;
     }
 
-    async function checkExistingRegistration() {
+    async function loadProfile() {
       try {
-        const { data: existingRegistration, error: registrationError } = await supabase
-          .from('registrations')
-          .select('id')
-          .eq('user_id', user?.id)
-          .single();
+        // // Get profile data
+        // const { data: profileData, error: profileError } = await supabase
+        //   .from('profiles')
+        //   .select('full_name')
+        //   .eq('id', user?.id)
+        //   .maybeSingle();
 
-        if (registrationError && registrationError.code !== 'PGRST116') {
-          throw registrationError;
-        }
+        // if (profileError) {
+        //   // If profile doesn't exist, create it
+        //   if (profileError.code === 'PGRST116') {
+        //     const { error: insertError } = await supabase
+        //       .from('profiles')
+        //       .insert([{ id: user?.id, full_name: '', avatar_url: '', bio: '' }])
+        //       .select()
+        //       .single();
 
-        if (existingRegistration) {
-          navigate('/filled');
-          return;
-        }
+        //     if (insertError) throw insertError;
+        //   } else {
+        //     throw profileError;
+        //   }
+        // }
 
+        // if (profileData) {
+        //   setProfile({ full_name: profileData.full_name, email: user?.email || '' });
+        // }
+
+        // Get QR code on initial load
         const qrCode = await getAvailableQRCode();
         setQrCode(qrCode.qr_url);
       } catch (error) {
-        console.error('Error checking registration:', error);
-        setError('Failed to load registration data. Please try refreshing the page.');
+        console.error('Error loading data:', error);
+        setError('Failed to load profile information. Please try refreshing the page.');
+      } finally {
+        setLoading(false);
       }
     }
 
-    checkExistingRegistration();
+    loadProfile();
   }, [user, navigate]);
-
-
-  // validiating the form
-  const validateForm = (): boolean => {
-    const errors: FormErrors = {};
-    let isValid = true;
-
-    // Full Name validation
-    if (formData.full_name.trim().length < 2) {
-      errors.full_name = 'Full name must be at least 2 characters long';
-      isValid = false;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      errors.email = 'Please enter a valid email address';
-      isValid = false;
-    }
-
-    // Phone validation (10 digits)
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(formData.phone)) {
-      errors.phone = 'Please enter a valid 10-digit phone number';
-      isValid = false;
-    }
-
-    // Institution validation
-    if (formData.institution.trim().length < 2) {
-      errors.institution = 'Institution name must be at least 2 characters long';
-      isValid = false;
-    }
-
-    // Profession validation
-    if (!formData.profession) {
-      errors.profession = 'Please select your profession';
-      isValid = false;
-    }
-
-    // T-shirt size validation
-    if (!formData.tshirt_size) {
-      errors.tshirt_size = 'Please select your T-shirt size';
-      isValid = false;
-    }
-
-    // Location validation
-    if (formData.location.trim().length < 2) {
-      errors.location = 'Location must be at least 2 characters long';
-      isValid = false;
-    }
-
-    // Transaction ID validation
-    const transactionIdRegex = /^[0-9A-Za-z]{12,}$/;
-    if (!transactionId.trim()) {
-      errors.transaction_id = 'Transaction ID is required';
-      isValid = false;
-    } else if (!transactionIdRegex.test(transactionId.trim())) {
-      errors.transaction_id = 'Please enter a valid transaction ID with at least 12 characters';
-      isValid = false;
-    }
-
-    setFormErrors(errors);
-    return isValid;
-  };
 
   const getAvailableQRCode = async () => {
     try {
+      // Get QR code with available count
       const { data: qrCodes, error: qrError } = await supabase
         .from('qr_codes')
         .select('*')
@@ -144,8 +91,10 @@ export default function Register() {
       if (qrError) throw qrError;
 
       if (!qrCodes || qrCodes.length === 0) {
+        // If no QR codes available, reset counts
         await supabase.rpc('reset_qr_codes');
         
+        // Try getting QR code again
         const { data: resetQrCodes, error: resetError } = await supabase
           .from('qr_codes')
           .select('*')
@@ -171,36 +120,22 @@ export default function Register() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    setFormErrors({});
-
-    if (!validateForm()) {
-      return;
-    }
+    setSubmitting(true);
 
     if (!formData.terms_accepted) {
       setError('You must accept the terms and conditions to register');
+      setSubmitting(false);
       return;
     }
 
-    setSubmitting(true);
+    if (!transactionId.trim()) {
+      setError('Please enter the transaction ID from your payment');
+      setSubmitting(false);
+      return;
+    }
 
     try {
-      // Check again for existing registration before submitting
-      const { data: existingRegistration, error: registrationCheckError } = await supabase
-        .from('registrations')
-        .select('id')
-        .eq('user_id', user?.id)
-        .single();
-
-      if (registrationCheckError && registrationCheckError.code !== 'PGRST116') {
-        throw registrationCheckError;
-      }
-
-      if (existingRegistration) {
-        navigate('/filled');
-        return;
-      }
-
+      // Get current QR code
       const { data: currentQrCode, error: qrError } = await supabase
         .from('qr_codes')
         .select('*')
@@ -209,6 +144,7 @@ export default function Register() {
 
       if (qrError) throw qrError;
 
+      // Decrease QR code count
       const { error: updateError } = await supabase
         .from('qr_codes')
         .update({ count: currentQrCode.count - 1 })
@@ -216,17 +152,19 @@ export default function Register() {
 
       if (updateError) throw updateError;
 
+      // Save registration with transaction ID
       const { error: registrationError } = await supabase
         .from('registrations')
         .insert([{
           user_id: user?.id,
           qr_code_id: currentQrCode.id,
-          transaction_id: transactionId.trim(),
+          transaction_id: transactionId,
           ...formData
         }]);
 
       if (registrationError) throw registrationError;
 
+      // Navigate home after successful registration
       navigate('/filled');
     } catch (error) {
       console.error('Error submitting registration:', error);
@@ -235,6 +173,14 @@ export default function Register() {
       setSubmitting(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-gray-600">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -259,34 +205,20 @@ export default function Register() {
                     <label className="block text-sm font-medium text-gray-700">Full Name</label>
                     <input
                       type="text"
-                      required
                       value={formData.full_name}
                       onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                      className={`mt-1 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
-                        formErrors.full_name ? 'border-red-300' : 'border-gray-600'
-                      }`}
-                      placeholder="Enter your full name"
+                      className="mt-1 block w-full rounded-md border-gray-300 bg-gray-50 shadow-sm"
                     />
-                    {formErrors.full_name && (
-                      <p className="mt-1 text-sm text-red-600">{formErrors.full_name}</p>
-                    )}
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700">Email</label>
                     <input
                       type="email"
-                      required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`mt-1 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
-                        formErrors.email ? 'border-red-300' : 'border-gray-300'
-                      }`}
-                      placeholder="Enter your email address"
+                      className="mt-1 block w-full rounded-md border-gray-300 bg-gray-50 shadow-sm"
                     />
-                    {formErrors.email && (
-                      <p className="mt-1 text-sm text-red-600">{formErrors.email}</p>
-                    )}
                   </div>
 
                   <div>
@@ -296,14 +228,8 @@ export default function Register() {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className={`mt-1 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
-                        formErrors.phone ? 'border-red-300' : 'border-gray-300'
-                      }`}
-                      placeholder="Enter your 10-digit phone number"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     />
-                    {formErrors.phone && (
-                      <p className="mt-1 text-sm text-red-600">{formErrors.phone}</p>
-                    )}
                   </div>
 
                   <div>
@@ -313,14 +239,8 @@ export default function Register() {
                       required
                       value={formData.institution}
                       onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
-                      className={`mt-1 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
-                        formErrors.institution ? 'border-red-300' : 'border-gray-300'
-                      }`}
-                      placeholder="Enter your college/institution name"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     />
-                    {formErrors.institution && (
-                      <p className="mt-1 text-sm text-red-600">{formErrors.institution}</p>
-                    )}
                   </div>
 
                   <div>
@@ -329,9 +249,7 @@ export default function Register() {
                       required
                       value={formData.profession}
                       onChange={(e) => setFormData({ ...formData, profession: e.target.value })}
-                      className={`mt-1 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
-                        formErrors.profession ? 'border-red-300' : 'border-gray-300'
-                      }`}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     >
                       <option value="">Select Profession</option>
                       <option value="student">Student</option>
@@ -339,9 +257,6 @@ export default function Register() {
                       <option value="entrepreneur">Entrepreneur</option>
                       <option value="other">Other</option>
                     </select>
-                    {formErrors.profession && (
-                      <p className="mt-1 text-sm text-red-600">{formErrors.profession}</p>
-                    )}
                   </div>
 
                   <div>
@@ -350,9 +265,7 @@ export default function Register() {
                       required
                       value={formData.tshirt_size}
                       onChange={(e) => setFormData({ ...formData, tshirt_size: e.target.value })}
-                      className={`mt-1 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
-                        formErrors.tshirt_size ? 'border-red-300' : 'border-gray-300'
-                      }`}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     >
                       <option value="">Select Size</option>
                       <option value="XS">XS</option>
@@ -362,9 +275,6 @@ export default function Register() {
                       <option value="XL">XL</option>
                       <option value="XXL">XXL</option>
                     </select>
-                    {formErrors.tshirt_size && (
-                      <p className="mt-1 text-sm text-red-600">{formErrors.tshirt_size}</p>
-                    )}
                   </div>
 
                   <div>
@@ -374,14 +284,8 @@ export default function Register() {
                       required
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className={`mt-1 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
-                        formErrors.location ? 'border-red-300' : 'border-gray-300'
-                      }`}
-                      placeholder="Enter your location"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     />
-                    {formErrors.location && (
-                      <p className="mt-1 text-sm text-red-600">{formErrors.location}</p>
-                    )}
                   </div>
 
                   <div>
@@ -391,14 +295,9 @@ export default function Register() {
                       required
                       value={transactionId}
                       onChange={(e) => setTransactionId(e.target.value)}
-                      placeholder="Enter payment UPI transaction ID"
-                      className={`mt-1 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
-                        formErrors.transaction_id ? 'border-red-300' : 'border-gray-300'
-                      }`}
+                      placeholder="Enter UPI transaction ID"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     />
-                    {formErrors.transaction_id && (
-                      <p className="mt-1 text-sm text-red-600">{formErrors.transaction_id}</p>
-                    )}
                   </div>
                 </div>
 
@@ -408,7 +307,7 @@ export default function Register() {
                       type="checkbox"
                       checked={formData.terms_accepted}
                       onChange={(e) => setFormData({ ...formData, terms_accepted: e.target.checked })}
-                      className="h-4 w-4 p-2 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                      className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                     />
                   </div>
                   <div className="ml-3">
@@ -442,7 +341,7 @@ export default function Register() {
                 
                 <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 mb-6">
                   <p className="text-blue-800">
-                    Please scan the QR code below to complete your payment of ₹599. <span><b>After payment, enter the transaction ID in the form.</b></span>
+                    Please scan the QR code below to complete your payment of ₹499. After payment, enter the transaction ID in the form.
                   </p>
                 </div>
 
