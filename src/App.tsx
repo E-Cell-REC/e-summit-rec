@@ -5,7 +5,7 @@ import { useAuth } from './contexts/AuthContext';
 import Profile from './pages/Profile';
 import Register from './pages/Register';
 import RegistrationSuccess from './pages/RegistrationSuccess';
-import HomeComponent from './components/Home';
+import HomeComponent from './components/HomePage/Home';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

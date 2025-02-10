@@ -1,4 +1,5 @@
 import React from 'react'
+import webflow from './Asserts/webflow.png'
 
 const Home = () => {
   return (
@@ -35,10 +36,12 @@ const Home = () => {
           {Array(3).fill(
             <>
               <div className="flex items-center gap-12 mx-6">
-                <span className="text-purple-500 font-bold text-2xl md:text-4xl">⚡ Webflow</span>
-                <span className="text-purple-500 font-bold text-2xl md:text-4xl">🛠 Relume</span>
-                <span className="text-purple-500 font-bold text-2xl md:text-4xl">⚡ Webflow</span>
-                <span className="text-purple-500 font-bold text-2xl md:text-4xl">🛠 Relume</span>
+                <span className="text-purple-500 font-bold text-2xl flex align-middle justify-center md:text-4xl"><img className='h-12' src={webflow} /> Webflow</span>
+
+                <span className="text-purple-500 font-bold text-2xl flex align-middle justify-center md:text-4xl"><img className='h-12' src={webflow} /> Webflow</span>
+
+                <span className="text-purple-500 font-bold text-2xl flex align-middle justify-center md:text-4xl"><img className='h-12' src={webflow} /> Webflow</span>
+                
               </div>
             </>
           )}
