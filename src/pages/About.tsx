@@ -108,6 +108,7 @@ const About = () => {
       {/* <div className="mx-11 mt-96 sm:mt-0">
         <Team />
       </div> */}
+      <div className="mb-64 md:hidden"></div>
 
       {/* footer goes here */}
       <Footer />

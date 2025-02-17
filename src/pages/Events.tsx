@@ -5,6 +5,18 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { X } from "lucide-react";
 
+import Mun from "../assets/images/mun.jpg"
+import IdeaPitch from "../assets/images/ideapitch.jpg"
+import BeTheCEO from "../assets/images/betheceo.jpg"
+import TechTalks from "../assets/images/techtalks.jpg"
+import StartupExpo from "../assets/images/startupexpo.jpeg"
+import IPLAuction from "../assets/images/iplauction.jpeg"
+import Internships from "../assets/images/Internships.png"
+import Panel from "../assets/images/panel.png"
+import NetworkingMixer from "../assets/images/networkingmixer.jpeg"
+import Cultural from "../assets/images/cultural.jpeg" 
+
+
 interface Event {
   date: string;
   location: string;
@@ -26,7 +38,7 @@ export default function ESummitPage() {
       title: "MUN",
       description:
         "MUN at E-Summit Dive into the world of economic diplomacy, and entrepreneurship at our MUN during the E-Summit! Simulate global councils, tackle business-centric challenges, and debate innovation-driven agendas. Join us to shape solutions for the world's most pressing economic issues and lead the dialogue for a sustainable, entrepreneurial future!",
-      imageUrl: "/src/assets/images/mun.jpg",
+      imageUrl: Mun,
       speakers: "Ammuktha , Vishal",
     },
     {
@@ -34,7 +46,7 @@ export default function ESummitPage() {
       location: "TBA",
       title: "Elevator Pitch",
       description: "Step into the spotlight at the Elevator Pitch Competition!, This is your chance to present your innovative business ideas to a panel of industry experts. Gain valuable mentorship, receive constructive feedback, and compete for exciting prizes as you bring your entrepreneurial vision to life! ",
-      imageUrl: "/src/assets/images/ideapitch.jpg",
+      imageUrl: IdeaPitch,
       speakers: "Vyshnavi",
     },
     {
@@ -42,7 +54,7 @@ export default function ESummitPage() {
       location: "TBA",
       title: "Be the CEO",
       description: "Take charge in the Be the CEO challenge! This strategic business simulation game, puts you in the driver’s seat, making executive decisions to navigate challenges and grow a virtual company. Showcase your leadership, strategy, and innovation to emerge as the ultimate CEO!",
-      imageUrl: "/src/assets/images/betheceo.jpg",
+      imageUrl: BeTheCEO,
       speakers: "Chetan",
     },
     {
@@ -50,7 +62,7 @@ export default function ESummitPage() {
       location: "TBA",
       title: "Tech Talks",
       description: "Explore the future of technology at Tech Talks. featuring two dynamic streams,: Circuital Technologies and Information Technology. Gain valuable insights from industry experts as they discuss cutting-edge trends, breakthrough innovations, and exciting career opportunities in the tech world! ",
-      imageUrl: "/src/assets/images/techtalks.jpg",
+      imageUrl: TechTalks,
       speakers: "TBA",
     },
     {
@@ -58,7 +70,7 @@ export default function ESummitPage() {
       location: "TBA",
       title: "Project/Startup Exhibition",
       description: "Showcase of innovative technologies and startup products, where participants can display their groundbreaking projects and connect with industry experts. The exhibition offers live demos, networking opportunities, and potential mentorship for budding entrepreneurs and startup founders.",
-      imageUrl: "/src/assets/images/startupexpo.jpeg",
+      imageUrl: StartupExpo,
       speakers: "Vikranth",
     },
     {
@@ -66,7 +78,7 @@ export default function ESummitPage() {
       location: "TBA",
       title: "IPL Auction",
       description: "The IPL Auction is a dynamic event where participants, acting as team owners, bid on players to build their ideal team, simulating real-world business decision-making and negotiation strategies. Watch the bidding war for the best players.",
-      imageUrl: "/src/assets/images/iplauction.jpeg",
+      imageUrl: IPLAuction,
       speakers: "Pavan Teja, Venkatnadh",
     },
     {
@@ -74,7 +86,7 @@ export default function ESummitPage() {
       location: "TBA",
       title: "Internship Drive",
       description: "Bridge the gap between talent and opportunity with the Internship Drive!, This initiative connects students with startups, providing them with hands-on experience, real-world learning, and a chance to kickstart their careers in a dynamic environment. Get hired by top tech companies.",
-      imageUrl: "/src/assets/images/Internships.png",
+      imageUrl: Internships,
       speakers: "TBA",
     },
     {
@@ -82,7 +94,7 @@ export default function ESummitPage() {
       location: "TBA",
       title: "Panel Discussion",
       description: "A Panel Discussion is a structured event where experts share insights, exchange ideas, and debate on a specific topic, followed by audience interaction through Q&A. ",
-      imageUrl: "/src/assets/images/panel.png",
+      imageUrl: Panel,
       speakers: "Charan Manikanta N",
     },
     {
@@ -90,7 +102,7 @@ export default function ESummitPage() {
       location: "TBA",
       title: "Networking Mixer",
       description: "Expand your horizons at the Networking Mixer! This platform brings together students, industry professionals, and fellow entrepreneurs, fostering meaningful connections, collaborations, and opportunities to grow your network in the world of innovation and business.",
-      imageUrl: "/src/assets/images/networkingmixer.jpeg",
+      imageUrl: NetworkingMixer,
       speakers: "TBA",
     },
     {
@@ -98,7 +110,7 @@ export default function ESummitPage() {
       location: "TBA",
       title: "Culturals",
       description: "Unleash your creativity at Culturals! A vibrant celebration of music, dance, drama, and art, this event brings energy and excitement to the summit while showcasing incredible talent and artistic expression.",
-      imageUrl: "/src/assets/images/cultural.jpeg",
+      imageUrl: Cultural,
       speakers: "TBA",
     },
   ];
