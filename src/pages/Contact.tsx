@@ -55,7 +55,7 @@ const ContactUs: React.FC = () => {
       {/* Maps */}
       <div className="mt-10 m-10 flex justify-center">
         <iframe
-          className="w-11/12 h-96"
+          className="w-11/12 h-96 rounded-lg"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.6677547056574!2d83.4115950738706!3d17.994188183000187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3be321dab3af81%3A0x98aea1e9cbd6aabc!2sRaghu%20Engineering%20College%20(Autonomous)!5e0!3m2!1sen!2sin!4v1739294605728!5m2!1sen!2sin"
           loading="lazy"
         ></iframe>

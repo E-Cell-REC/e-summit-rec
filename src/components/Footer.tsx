@@ -1,14 +1,14 @@
-import NavLogo from '../assets/navlogo-dark.png';
 import facebook from '../assets/logos/facebook.png';
 import instagram from '../assets/logos/instagram.png';
 import linkedin from '../assets/logos/linkedin.png';
 import twitter from '../assets/logos/twitter.png';
+import SummitLogo from "../assets/summit-footlogo.png"
 
 function Footer() {
     return (
         <footer className='bg-gray-900 text-white w-11/12 mx-auto p-4'>
             <div className="border-b border-gray-300 flex flex-col items-center p-4 text-center">
-                <img src={NavLogo} alt="logo" className='mb-4' />
+                <img src={SummitLogo} width={500} height={500} alt="logo" className='mb-4' />
                 <div className="flex flex-wrap justify-center space-x-4 mb-4 items-center">
                     <a href="https://www.facebook.com/" className='flex items-center hover:text-purple-500 space-x-2'>
                         <img src={facebook} width={30} height={30} alt="facebook" />

@@ -1,42 +1,32 @@
-import React from "react";
 import NavBar from "../components/NavBar";
-import Team from "../components/About/Team";
+// import Team from "../components/About/Team";
 import Footer from "../components/Footer";
-import aboutPlace from "../assets/about-placeholder.png";
-import pointsIcon from "../assets/points-icon.png";
-
-// Define types for stats and values
-interface Stat {
-  number: string;
-  label: string;
-}
+import EsummitTeam from "../assets/images/esummit25Team.jpg";
+import EcellLogo from "../assets/logos/ecellnew.png"
+import { Lightbulb, Handshake, Rocket } from "lucide-react";
 
 interface Value {
   title: string;
   desc: string;
+  icon: JSX.Element;
 }
-
-// Data for statistics section
-const stats: Stat[] = [
-  { number: "2015", label: "Founded" },
-  { number: "$20M", label: "Product Sales" },
-  { number: "500+", label: "Employees" },
-  { number: "5K+", label: "Customers" },
-];
 
 // Data for company values
 const values: Value[] = [
   {
-    title: "Describe value one",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+    title: "Innovation & Creativity",
+    desc: "We encourage bold ideas and disruptive thinking to drive meaningful change in the entrepreneurial landscape.",
+    icon: <Lightbulb size={32} />,
   },
   {
-    title: "Describe value two",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+    title: "Collaboration & Growth",
+    desc: "Success is built through teamwork and shared knowledge. We cultivate a supportive network of founders, mentors, and investors.",
+    icon: <Handshake size={32} />,
   },
   {
-    title: "Describe value three",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+    title: "Impact & Sustainability",
+    desc: "We aim to create long-term value by promoting sustainable business solutions that make a real difference.",
+    icon: <Rocket size={32} />,
   },
 ];
 
@@ -48,61 +38,54 @@ const About = () => {
       {/* about section goes here */}
       <div className="aboutSection mt-10 text-white bg-gray-900 px-6 md:px-20">
         {/* Header Section */}
-        <div className="headSec text-white md:h-[25vh] w-full mb-10 text-center md:text-left">
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">
-            Describe why your company exists [mission statement]
-          </h1>
-          <p className="text-sm md:text-base">
-            Explain what your company is working on and the value you provide to
-            your customers.
-          </p>
-        </div>
-
-        {/* Company Growth Section */}
-        <div className="highlightSec text-white h-auto md:h-[40vh] flex flex-wrap justify-between gap-4">
-          <h2 className="w-full md:w-[40%] text-xl md:text-2xl font-semibold">
-            Highlight the growth of your company by the numbers
-          </h2>
-          <div className="rightSec w-full md:w-[50%]">
-            <p className="h-auto md:h-[30%] text-sm md:text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam
-              libero vitae erat.
+        <div className="headSec flex flex-col md:flex-row items-center justify-center text-white md:h-[70vh] w-full mb-10 text-center md:text-left">
+          <div className="md:w-1/2">
+            <h1 className="text-2xl text-purple-600 md:text-3xl font-bold mb-2">
+              E-SUMMIT'25 REC organised by <a href="https://ecellrec.vercel.app" className="underline underline-offset-2 text-white hover:text-purple-600">E-Cell REC</a>
+            </h1>
+            <p className="text-justify text-md md:text-lg">
+              <span className="text-purple-400 font-semibold">E-Cell REC</span> proudly presents the first edition of its
+              Entrepreneurship Summit, a premier event designed to bridge the gap
+              between students, aspiring entrepreneurs, startup founders,
+              investors, and industry experts. With a strong focus on
+              strengthening Andhra Pradesh's startup ecosystem, <span className="text-purple-400 font-semibold" >E-Summit REC </span>
+              serves as a hub for collaborations, networking, and strategic
+              connections, particularly uniting the North Andhra startup community
+              under one roof. Our mission is to educate, engage, and empower
+              attendees through impactful speaker sessions, panel discussions, and
+              hands-on experiences. We aim to cultivate an entrepreneurial mindset
+              by providing real-world insights, mentorship, and incredible
+              opportunities to shape the future of innovation. Join us as we
+              embark on this transformative journey, unlocking new possibilities
+              and empowering endless horizons! 🚀
             </p>
-            <div className="statsSec grid grid-cols-2 gap-4 mt-4">
-              {stats.map((stat, index) => (
-                <div key={index} className="box text-center">
-                  <h2 className="text-2xl md:text-3xl font-bold">
-                    {stat.number}
-                  </h2>
-                  <p>{stat.label}</p>
-                </div>
-              ))}
-            </div>
+          </div>
+          <div className="mt-6 md:mt-0 md:ml-10 md:w-1/2">
+            <img src={EcellLogo} className="w-full h-auto" alt="ecellrec" />
           </div>
         </div>
 
         {/* Image Section */}
-        <div className="imgSec h-[100vh] py-10 text-white md:h-[80vh] mt-4">
+        <div className="imgSec h-auto py-10 text-white md:h-[100vh]">
           <img
-            src={aboutPlace}
+            src={EsummitTeam}
             alt="About us section image"
-            className="h-full w-full object-cover"
+            className="h-50 w-full rounded-lg"
           />
         </div>
 
         <div className="py-10 h-screen">
           {/* Importance Section */}
-          <div className="importanceSec text-white h-[40vh] md:h-[30vh] mt-10 w-full md:w-[50vw]">
+          <div className="importanceSec text-white h-[40vh] md:h-[30vh] w-full md:w-[50vw]">
             <p className="mb-2">Our values</p>
-            <h2 className="text-xl font-semibold md:text-2xl mb-2">
-              Emphasize what's important to your company
+            <h2 className="text-xl text-purple-600 font-semibold md:text-2xl mb-2">
+              What Drives Us Forward
             </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare.
+            <p className="text-justify">
+              At E-Cell REC, we believe in fostering innovation, collaboration,
+              and entrepreneurial excellence. Our core values shape our vision
+              and guide us in creating an ecosystem that empowers aspiring
+              entrepreneurs.
             </p>
           </div>
 
@@ -110,11 +93,11 @@ const About = () => {
           <div className="pointsSec text-white h-auto md:h-[40vh] mt-4 flex flex-wrap gap-10">
             {values.map((value, index) => (
               <div key={index} className="pointBox w-full md:w-[30%]">
-                <img className="mb-6" src={pointsIcon} alt="icon" />
+                <div className="py-4 text-purple-600">{value.icon}</div>
                 <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-6">
                   {value.title}
                 </h3>
-                <p>{value.desc}</p>
+                <p className="text-justify">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -122,9 +105,9 @@ const About = () => {
       </div>
 
       {/* team section goes here */}
-      <div className="mx-11 mt-96 sm:mt-0">
+      {/* <div className="mx-11 mt-96 sm:mt-0">
         <Team />
-      </div>
+      </div> */}
 
       {/* footer goes here */}
       <Footer />
