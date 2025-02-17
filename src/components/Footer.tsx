@@ -1,4 +1,4 @@
-import facebook from '../assets/logos/facebook.png';
+import youtube from '../assets/logos/youtubelogo.png';
 import instagram from '../assets/logos/instagram.png';
 import linkedin from '../assets/logos/linkedin.png';
 import twitter from '../assets/logos/twitter.png';
@@ -10,19 +10,19 @@ function Footer() {
             <div className="border-b border-gray-300 flex flex-col items-center p-4 text-center">
                 <img src={SummitLogo} width={500} height={500} alt="logo" className='mb-4' />
                 <div className="flex flex-wrap justify-center space-x-4 mb-4 items-center">
-                    <a href="https://www.facebook.com/" className='flex items-center hover:text-purple-500 space-x-2'>
-                        <img src={facebook} width={30} height={30} alt="facebook" />
-                        <span>Facebook</span>
+                    <a href="https://www.youtube.com/@E-cellRec" className='flex items-center hover:text-purple-500 space-x-2'>
+                        <img src={youtube} width={30} height={30} alt="youtube" />
+                        <span>youtube</span>
                     </a>
-                    <a href="https://www.instagram.com/" className='flex items-center hover:text-purple-500 space-x-2'>
+                    <a href="https://www.instagram.com/ecell_.rec/" className='flex items-center hover:text-purple-500 space-x-2'>
                         <img src={instagram} width={30} height={30} alt="instagram" />
                         <span>Instagram</span>
                     </a>
-                    <a href="https://www.twitter.com/" className='flex items-center hover:text-purple-500 space-x-2'>
+                    <a href="https://www.x.com/" className='flex items-center hover:text-purple-500 space-x-2'>
                         <img src={twitter} width={30} height={30} alt="twitter" />
                         <span>Twitter</span>
                     </a>
-                    <a href="https://www.linkedin.com/" className='flex items-center hover:text-purple-500 space-x-2'>
+                    <a href="https://www.linkedin.com/company/e-cell-rec-vizag/" className='flex items-center hover:text-purple-500 space-x-2'>
                         <img src={linkedin} width={30} height={30} alt="linkedin" />
                         <span>LinkedIn</span>
                     </a>

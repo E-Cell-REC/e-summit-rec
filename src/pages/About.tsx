@@ -77,16 +77,19 @@ const About = () => {
         <div className="py-10 h-screen">
           {/* Importance Section */}
           <div className="importanceSec text-white h-[40vh] md:h-[30vh] w-full md:w-[50vw]">
-            <p className="mb-2">Our values</p>
-            <h2 className="text-xl text-purple-600 font-semibold md:text-2xl mb-2">
+            <p className="text-4xl text-purple-600 font-semibold md:text-2xl mb-2">
               What Drives Us Forward
-            </h2>
+            </p>
             <p className="text-justify">
               At E-Cell REC, we believe in fostering innovation, collaboration,
               and entrepreneurial excellence. Our core values shape our vision
               and guide us in creating an ecosystem that empowers aspiring
               entrepreneurs.
             </p>
+          </div>
+
+          <div>
+          <p className="text-2xl">Our Values</p>
           </div>
 
           {/* Points Section */}

@@ -13,7 +13,7 @@ const day1: AgendaItem[] = [
   {
     time: "8:00 AM - 9:30 AM",
     title: "Registration",
-    description: "Registration and welcome kit distribution"
+    description: "Registration for the event"
   },
   {
     time: "9:00 AM - 10:00 AM",
@@ -27,8 +27,8 @@ const day1: AgendaItem[] = [
   },
   {
     time: "11:00 AM - 12:30 PM",
-    title: "MUN",
-    description: "Model United Nations"
+    title: "Model United Nations (MUN)",
+    description: "Dive into the world of economic diplomacy"
   },
   {
     time: "11:00 AM - 12:30 PM",
@@ -62,8 +62,8 @@ const day1: AgendaItem[] = [
   },
   {
     time: "1:40 PM - 3:30 PM",
-    title: "MUN S2",
-    description: "Model United Nations"
+    title: "Model United Nations (MUN) S2",
+    description: "Dive into the world of economic diplomacy"
   },
   {
     time: "1:40 PM - 3:30 PM",
@@ -77,7 +77,7 @@ const day1: AgendaItem[] = [
   },
   {
     time: "1:40 PM - 3:30 PM",
-    title: "Elevator S2",
+    title: "Elevator Pitch S2",
     description: "Pitch your startup idea"
   },
   {
@@ -117,12 +117,12 @@ const day2: AgendaItem[] = [
 
 const AgendaDay: React.FC<{ day: number; items: AgendaItem[] }> = ({ day, items }) => (
   <div className="mb-12 relative">
-    <div className="sticky top-20 z-10 bg-white backdrop-blur-md rounded-2xl p-4 mb-8 shadow-sm">
+    <div className="sticky top-20 z-10 bg-gradient-to-r from-gray-300 via-purple-500 to-gray-300 backdrop-blur-md rounded-2xl p-4 mb-8 shadow-sm">
       <div className="flex items-center gap-3">
         <div className="bg-purple-600 p-3 rounded-xl">
           <Calendar className="w-6 h-6 text-white" />
         </div>
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 text-transparent bg-clip-text">
+        <h2 className="text-2xl font-bold bg-white text-transparent bg-clip-text">
           Day {day}
         </h2>
       </div>

@@ -35,8 +35,11 @@ const ContactUs: React.FC = () => {
             <Phone className="text-purple-400 w-6 h-6" />
             <div>
               <p className="text-purple-400 font-semibold">Phone</p>
-              <a href="tel:+919999999999" className="text-gray-300 hover:underline">
-                +91 XXXXX XXXXX
+              <a href="tel:+919652724755" className="text-gray-300 hover:underline">
+              +91 96527 24755
+              </a>
+              <a href="tel:+918074321785" className="text-gray-300 hover:underline">
+              , +91 80743 21785
               </a>
             </div>
           </div>

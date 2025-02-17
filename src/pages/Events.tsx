@@ -35,9 +35,9 @@ export default function ESummitPage() {
     {
       date: "01/03/2025",
       location: "TBA",
-      title: "MUN",
+      title: "Model United Nations (MUN)",
       description:
-        "MUN at E-Summit Dive into the world of economic diplomacy, and entrepreneurship at our MUN during the E-Summit! Simulate global councils, tackle business-centric challenges, and debate innovation-driven agendas. Join us to shape solutions for the world's most pressing economic issues and lead the dialogue for a sustainable, entrepreneurial future!",
+        "MUN at E-Summit Dive into the world of economic diplomacy, and entrepreneurship at our MUN during the E-Summit. Simulate global councils, tackle business-centric challenges, and debate innovation-driven agendas. Join us to shape solutions for the world's most pressing economic issues and lead the dialogue for a sustainable, entrepreneurial future!",
       imageUrl: Mun,
       speakers: "Ammuktha , Vishal",
     },
@@ -87,7 +87,7 @@ export default function ESummitPage() {
       title: "Internship Drive",
       description: "Bridge the gap between talent and opportunity with the Internship Drive!, This initiative connects students with startups, providing them with hands-on experience, real-world learning, and a chance to kickstart their careers in a dynamic environment. Get hired by top tech companies.",
       imageUrl: Internships,
-      speakers: "TBA",
+      speakers: "Pavan Teja, Pujitha Marisa",
     },
     {
       date: "02/03/2025",
