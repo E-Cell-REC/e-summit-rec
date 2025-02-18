@@ -29,7 +29,7 @@ function Footer() {
                 </div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center p-4 text-center md:text-left">
-                <p className="mb-2 md:mb-0">© 2025 E-Summit. All Rights Reserved.</p>
+                <p className="mb-2 md:mb-0">© 2025 E-Summit. Site developed by WebTeam ECELL REC.</p>
                 <div className='flex flex-col md:flex-row gap-2 md:gap-5'>
                     <a href='#' className='underline hover:text-purple-500'>Privacy Policies</a>
                     <a href='#' className='underline hover:text-purple-500'>Terms of Service</a>

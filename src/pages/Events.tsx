@@ -128,6 +128,9 @@ export default function ESummitPage() {
     <div className="bg-[#111827]">
       <NavBar />
       <div className="text-white min-h-screen flex flex-col items-center p-8">
+      <h1 className="text-4xl font-bold text-purple-600 mb-10">
+          E-Summit Events
+        </h1>
         {/* Event Cards Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-justify">
             {events.map((event, index) => (
