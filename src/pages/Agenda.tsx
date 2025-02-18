@@ -117,7 +117,7 @@ const day2: AgendaItem[] = [
 
 const AgendaDay: React.FC<{ day: number; items: AgendaItem[] }> = ({ day, items }) => (
   <div className="mb-12 relative">
-    <div className="sticky top-20 z-10 backdrop-blur-md bg-opacity-20 bg-gradient-to-r from-gray-300 via-purple-500 to-gray-300 rounded-2xl p-4 mb-8 shadow-sm">
+    <div className="sticky top-20 z-10 bg-gradient-to-r from-gray-300 via-purple-500 to-gray-300 rounded-2xl p-4 mb-8 shadow-sm">
       <div className="flex items-center gap-3">
         <div className="bg-purple-600 p-3 rounded-xl">
           <Calendar className="w-6 h-6 text-white" />
