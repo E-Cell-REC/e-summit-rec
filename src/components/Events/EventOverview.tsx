@@ -46,11 +46,11 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
           </div>
 
           {/* Buttons */}
-          <div className="mt-8 flex space-x-4">
+          {/* <div className="mt-8 flex space-x-4">
             <button className="border border-purple-600 px-6 py-3 text-sm font-semibold uppercase rounded">
               View events
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Section - Event Image */}

@@ -13,6 +13,7 @@ import StartupExpo from "../assets/images/startupexpo.jpeg"
 import IPLAuction from "../assets/images/iplauction.jpeg"
 import Internships from "../assets/images/Internships.png"
 import Panel from "../assets/images/panel.png"
+import SpeakerSession from "../assets/images/speakerSesssion.jpg"
 import NetworkingMixer from "../assets/images/networkingmixer.jpeg"
 import Cultural from "../assets/images/cultural.jpeg" 
 
@@ -55,7 +56,7 @@ export default function ESummitPage() {
       title: "Be the CEO",
       description: "Take charge in the Be the CEO challenge! This strategic business simulation game, puts you in the driver’s seat, making executive decisions to navigate challenges and grow a virtual company. Showcase your leadership, strategy, and innovation to emerge as the ultimate CEO!",
       imageUrl: BeTheCEO,
-      speakers: "Chetan",
+      speakers: "Chetan Deva P",
     },
     {
       date: "01/03/2025",
@@ -63,7 +64,23 @@ export default function ESummitPage() {
       title: "Tech Talks",
       description: "Explore the future of technology at Tech Talks. featuring two dynamic streams,: Circuital Technologies and Information Technology. Gain valuable insights from industry experts as they discuss cutting-edge trends, breakthrough innovations, and exciting career opportunities in the tech world! ",
       imageUrl: TechTalks,
-      speakers: "TBA",
+      speakers: "Sanjana , Venkata Aditya",
+    },
+    {
+      date: "02/03/2025",
+      location: "TBA",
+      title: "Speaker Sessions",
+      description: "Gain valuable insights from industry experts as they share their knowledge, experiences, and success stories. Speaker Sessions cover a wide range of topics, including entrepreneurship, innovation, technology, and leadership, offering inspiration and guidance to aspiring entrepreneurs and professionals.",
+      imageUrl: SpeakerSession,
+      speakers: "Sanjana, Venkat Aditya, Chetan Deva P",
+    },
+    {
+      date: "02/03/2025",
+      location: "TBA",
+      title: "Panel Discussion",
+      description: "A Panel Discussion is a structured event where experts share insights, exchange ideas, and debate on a specific topic, followed by audience interaction through Q&A. ",
+      imageUrl: Panel,
+      speakers: "Charan Manikanta N",
     },
     {
       date: "01/03/2025",
@@ -88,14 +105,6 @@ export default function ESummitPage() {
       description: "Bridge the gap between talent and opportunity with the Internship Drive!, This initiative connects students with startups, providing them with hands-on experience, real-world learning, and a chance to kickstart their careers in a dynamic environment. Get hired by top tech companies.",
       imageUrl: Internships,
       speakers: "Pavan Teja, Pujitha Marisa",
-    },
-    {
-      date: "02/03/2025",
-      location: "TBA",
-      title: "Panel Discussion",
-      description: "A Panel Discussion is a structured event where experts share insights, exchange ideas, and debate on a specific topic, followed by audience interaction through Q&A. ",
-      imageUrl: Panel,
-      speakers: "Charan Manikanta N",
     },
     {
       date: "02/03/2025",

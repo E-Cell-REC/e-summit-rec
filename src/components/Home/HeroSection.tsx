@@ -28,7 +28,7 @@ const Home = () => {
       </p>
       <div className="mt-6 flex gap-4 justify-center">
         <button onClick={handleRegisterClick} className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg">
-          Resgister Now
+          Register Now
         </button>
         <button onClick={handleLearnClick} className="px-6 py-2 border border-purple-600 text-purple-400 hover:text-purple-300 rounded-lg">
           Learn more
