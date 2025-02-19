@@ -6,6 +6,7 @@ import Agenda from './pages/Agenda';
 import Speakers from './pages/Speakers';
 import Sponsors from './pages/Sponsors';
 import Contact from './pages/Contact';
+import TicketPerks from './pages/TicketPerks'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/speakers" element={<Speakers />} />
       <Route path="/sponsors" element={<Sponsors />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/perks" element={<TicketPerks/>} />
     </Routes>
     </>
   );

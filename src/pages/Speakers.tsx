@@ -1,62 +1,40 @@
 import NavBar from "../components/NavBar";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
+import GuheshSir from "../assets/speakers/guheshsir.jpg";
+import VenkataSir from "../assets/speakers/venkatareaddysir.jpg";
+import VineelSir from "../assets/speakers/vineelsir.jpg";
 
-// const speakers = [
-//   {
-//     name: "Name1",
-//     title: "Role in Company",
-//     image: "path/to/name1_image.jpg",
-//   },
-//   {
-//     name: "Name2",
-//     title: "Role in Company",
-//     image: "path/to/name2_image.jpg",
-//   },
-//   {
-//     name: "Name3",
-//     title: "Role in Company",
-//     image: "path/to/name3_image.jpg",
-//   },
-//   {
-//     name: "Name4",
-//     title: "Role in Company",
-//     image: "path/to/name4_image.jpg",
-//   },
-//   {
-//     name: "Name5",
-//     title: "Role in Company",
-//     image: "path/to/name5_image.jpg",
-//   },
-//   {
-//     name: "Name6",
-//     title: "Role in Company",
-//     image: "path/to/name6_image.jpg",
-//   },
-//   {
-//     name: "Name7",
-//     title: "Role in Company",
-//     image: "path/to/name7_image.jpg",
-//   },
-//   {
-//     name: "Name8",
-//     title: "Role in Company",
-//     image: "path/to/name8_image.jpg",
-//   },
-// ];
+const speakers = [
+  {
+    name: "Guhesh Ramanathan",
+    title: "CEO - IIM Visakhapatnam FIELD",
+    image: GuheshSir,
+  },
+  {
+    name: "Nallamilli Venkata Reddy",
+    title: "Founder - CEO Teckybot",
+    image: VenkataSir,
+  },
+  {
+    name: "Vineel Judson",
+    title: "Founder & CEO - Taramandal",
+    image: VineelSir,
+  },
+];
 
 const Speakers = () => {
   return (
     <div className="bg-gray-900">
       <NavBar />
-      <div className="h-screen flex items-center justify-center text-white text-4xl">
+      {/* <div className="h-screen flex items-center justify-center text-white text-4xl">
         <p>Announcing Soon....</p>
-      </div>
-    {/* <div className="bg-gray-900 text-white py-10 px-5 md:px-20 relative">
+      </div> */}
+    <div className="bg-gray-900 text-white py-10 px-5 md:px-20 relative">
       <div className="text-center">
-        <h2 className="text-white text-4xl font-extrabold tracking-wider font-sans">
+        <h2 className="text-white text-4xl font-extrabold tracking-wider">
           E-SUMMIT '25
         </h2>
-        <h3 className="text-purple-300 text-6xl font-bold mt-2 mb-10 font-serif">
+        <h3 className="text-purple-300 text-6xl font-bold mt-2 mb-10">
           SPEAKERS
         </h3>
       </div>
@@ -83,7 +61,7 @@ const Speakers = () => {
       </div>
     </div>  
     <Footer />
-    */}
+   
    
     </div>
   );

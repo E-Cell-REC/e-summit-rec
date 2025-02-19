@@ -10,7 +10,7 @@ const Home = () => {
   };
 
   const handleLearnClick = () => {
-    navigate('/about');
+    navigate('/perks');
   }
   return (
     <>
@@ -31,7 +31,7 @@ const Home = () => {
           Register Now
         </button>
         <button onClick={handleLearnClick} className="px-6 py-2 border border-purple-600 text-purple-400 hover:text-purple-300 rounded-lg">
-          Learn more
+          Ticket Perks 
         </button>
       </div>
     </div>
