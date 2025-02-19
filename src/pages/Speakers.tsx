@@ -32,7 +32,7 @@ const Speakers = () => {
     <div className="bg-gray-900 text-white py-10 px-5 md:px-20 relative">
       <div className="text-center">
         <h2 className="text-white text-4xl font-extrabold tracking-wider">
-          E-SUMMIT '25
+          E-SUMMIT'25
         </h2>
         <h3 className="text-purple-300 text-6xl font-bold mt-2 mb-10">
           SPEAKERS
