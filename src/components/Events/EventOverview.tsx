@@ -8,6 +8,7 @@ interface OverviewCardProps {
   description: string;
   imageUrl: string;
   speakers: string;
+  registerLink: string;
 }
 
 const OverviewCard: React.FC<OverviewCardProps> = ({
@@ -17,6 +18,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
   description,
   imageUrl,
   speakers,
+  registerLink,
 }) => {
   return (
     <div className="h-screen w-screen flex items-center justify-center bg-black text-white bg-opacity-5 backdrop-blur">
@@ -46,11 +48,16 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
           </div>
 
           {/* Buttons */}
-          {/* <div className="mt-8 flex space-x-4">
-            <button className="border border-purple-600 px-6 py-3 text-sm font-semibold uppercase rounded">
+          <div className="mt-8 flex space-x-4">
+          { registerLink === "#" ? null :
+            <button className="bg-purple-600 rounded-lg px-6 py-3 text-sm font-semibold uppercase"> 
+                 <a href={registerLink}>Register Now</a>
+            </button> 
+          }
+            {/* <button className="border border-purple-600 px-6 py-3 text-sm font-semibold uppercase rounded">
               View events
-            </button>
-          </div> */}
+            </button> */}
+          </div>
         </div>
 
         {/* Right Section - Event Image */}

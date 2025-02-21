@@ -19,7 +19,7 @@ export default function TicketPerks() {
               Founders e.t.c...
             </li>
             <li>Participation Certification by ECELL REC</li>
-            <li>Access to all events and competitions</li>
+            <li>Free to register all events and competitions</li>
             <li>Access to all Speaker Sessions and Tech talks</li>
             <li>Access to Panel Discussion and Networking Mixer</li>
             <li>Access to Startup EXPO</li>

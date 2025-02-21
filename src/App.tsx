@@ -6,7 +6,7 @@ import Agenda from './pages/Agenda';
 import Speakers from './pages/Speakers';
 import Sponsors from './pages/Sponsors';
 import Contact from './pages/Contact';
-import TicketPerks from './pages/TicketPerks'
+import TicketPerks from './pages/TicketPerks';
 
 function App() {
   return (
