@@ -49,7 +49,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 
           {/* Buttons */}
           <div className="mt-8 flex space-x-4">
-          { registerLink === "#" ? null :
+          { registerLink === "#" ? "Release Soon" :
             <button className="bg-purple-600 rounded-lg px-6 py-3 text-sm font-semibold uppercase"> 
                  <a href={registerLink}>Register Now</a>
             </button> 
