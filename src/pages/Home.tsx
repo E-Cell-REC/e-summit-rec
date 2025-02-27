@@ -9,7 +9,7 @@ import EsummitLoads from "../assets/esummitlogogif.gif";
 import GuheshSir from "../assets/speakers/guheshsir.jpg";
 import VenkataSir from "../assets/speakers/venkatareaddysir.jpg";
 import VineelSir from "../assets/speakers/vineelsir.jpg";
-import SuryaSir from "../assets/speakers/SuryaPrakashSir.jpg"
+import SuryaSir from "../assets/speakers/SuryaPrakashSir.jpg";
 
 const speakers = [
   {
