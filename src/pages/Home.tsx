@@ -31,7 +31,7 @@ const speakers = [
     name: "Surya Prakash Kuchimanchi",
     title: "Co-Founder & CEO at Deeploop",
     image: SuryaSir,
-  },
+  }
 ];
 
 function Home() {
