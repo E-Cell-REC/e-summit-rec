@@ -3,7 +3,8 @@ import Footer from "../components/Footer";
 import GuheshSir from "../assets/speakers/guheshsir.jpg";
 import VenkataSir from "../assets/speakers/venkatareaddysir.jpg";
 import VineelSir from "../assets/speakers/vineelsir.jpg";
-import SuryaSir from "../assets/speakers/SuryaPrakashSir.jpg"
+import SuryaSir from "../assets/speakers/SuryaPrakashSir.jpg";
+import ShashankSir from "../assets/speakers/ShashankSir.jpg";
 
 const speakers = [
   {
@@ -25,7 +26,12 @@ const speakers = [
     name: "Surya Prakash Kuchimanchi",
     title: "Co-Founder & CEO at Deeploop",
     image: SuryaSir,
-  }
+  },
+  {
+    name: "Shashank R",
+    title: "Founder & CEO - ERMIN Automotive",
+    image: ShashankSir,
+  },
 ];
 
 const Speakers = () => {
