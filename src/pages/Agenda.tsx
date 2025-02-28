@@ -13,7 +13,7 @@ const day1: AgendaItem[] = [
   {
     time: "8:30 AM - 9:30 AM",
     title: "Registration",
-    description: "Registration Desk Opens at 8:00 AM at H&S Entrance"
+    description: "Registration Desk Opens at 8:00 AM at H&S Entrance!"
   },
   {
     time: "9:30 AM - 10:30 AM",
