@@ -5,6 +5,7 @@ import VenkataSir from "../assets/speakers/venkatareaddysir.jpg";
 import VineelSir from "../assets/speakers/vineelsir.jpg";
 import SuryaSir from "../assets/speakers/SuryaPrakashSir.jpg";
 import ShashankSir from "../assets/speakers/ShashankSir.jpg";
+import imagek from "../assets/speakers/image.png";
 
 const speakers = [
   {
@@ -32,6 +33,11 @@ const speakers = [
     title: "Founder & CEO - ERMIN Automotive",
     image: ShashankSir,
   },
+  {
+    name: "Mani Teja Pratha",
+    title: "Laiout",
+    image: imagek,
+  }
 ];
 
 const Speakers = () => {
