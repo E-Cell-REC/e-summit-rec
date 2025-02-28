@@ -9,7 +9,7 @@ import imagek from "../assets/speakers/image.png";
 
 const speakers = [
   {
-    name: "Guhesh Ramanathan Sir",
+    name: "Guhesh Ramanathan",
     title: "CEO - IIM Visakhapatnam FIELD",
     image: GuheshSir,
   },
