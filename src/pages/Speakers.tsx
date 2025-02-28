@@ -22,7 +22,7 @@ const speakers = [
     image: VineelSir,
   },
   {
-    name: "Surya Prakash Kuchimanchi",
+    name: "Surya Prakash Kuchimanchi Sir",
     title: "Co-Founder & CEO at Deeploop",
     image: SuryaSir,
   }
