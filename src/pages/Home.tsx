@@ -9,6 +9,9 @@ import EsummitLoads from "../assets/esummitlogogif.gif";
 import GuheshSir from "../assets/speakers/guheshsir.jpg";
 import VenkataSir from "../assets/speakers/venkatareaddysir.jpg";
 import VineelSir from "../assets/speakers/vineelsir.jpg";
+import SuryaSir from "../assets/speakers/SuryaPrakashSir.jpg";
+import ShashankSir from "../assets/speakers/ShashankSir.jpg";
+import imagek from "../assets/speakers/image.png";
 
 const speakers = [
   {
@@ -25,6 +28,21 @@ const speakers = [
     name: "Vineel Judson",
     title: "Founder & CEO - Taramandal",
     image: VineelSir,
+  },
+  {
+    name: "Surya Prakash Kuchimanchi",
+    title: "Co-Founder & CEO at Deeploop",
+    image: SuryaSir,
+  },
+  {
+    name: "Shashank R",
+    title: "Founder & CEO - ERMIN Automotive",
+    image: ShashankSir,
+  },
+  {
+    name: "Mani Teja Pratha",
+    title: "Laiout",
+    image: imagek,
   },
 ];
 

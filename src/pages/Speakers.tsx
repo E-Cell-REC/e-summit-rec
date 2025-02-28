@@ -37,7 +37,7 @@ const speakers = [
     name: "Mani Teja Pratha",
     title: "Laiout",
     image: imagek,
-  }
+  },
 ];
 
 const Speakers = () => {
