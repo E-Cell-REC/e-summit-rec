@@ -97,31 +97,36 @@ function Home() {
             Events Overview
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <EventsCard name={"MUN"} date={"1st march"} location={"TBA"} />
+            <EventsCard name={"MUN"} date={"1st march"} location={"Nano Labs"} />
             <EventsCard
               name={"Elevator Pitch"}
               date={"1st march"}
-              location={"TBA"}
+              location={"Electro Lounge"}
             />
             <EventsCard
               name={"Be The CEO"}
               date={"1st march"}
-              location={"TBA"}
+              location={"Nano Labs"}
+            />
+            <EventsCard
+              name={"Speaker Sessions"}
+              date={"1st march"}
+              location={"Seminar Hall"}
             />
             <EventsCard
               name={"Tech Talks"}
               date={"1st march"}
-              location={"TBA"}
+              location={"Seminar Hall"}
             />
             <EventsCard
               name={"Project/Startup Exhibition"}
               date={"1st march"}
-              location={"TBA"}
+              location={"WalkWay"}
             />
             <EventsCard
               name={"IPL AUCTION"}
               date={"1st march"}
-              location={"TBA"}
+              location={"Nano Labs"}
             />
             <EventsCard
               name={"Internship Drive"}

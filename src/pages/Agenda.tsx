@@ -11,108 +11,128 @@ interface AgendaItem {
 
 const day1: AgendaItem[] = [
   {
-    time: "8:00 AM - 9:30 AM",
+    time: "8:30 AM - 9:30 AM",
     title: "Registration",
-    description: "Registration for the event"
+    description: "Registration Desk Opens at 8:00 AM at H&S Entrance"
   },
   {
-    time: "9:00 AM - 10:00 AM",
+    time: "9:30 AM - 10:30 AM",
     title: "Inaguration",
-    description: "Welcome address by the Director"
+    description: "Welcome address by Principal- Ch.Srinvasu, IIC Convener DR.Kiran Kumar,N.Venkata Reddy teckybot founder&CEO,Vineel Judson founder of tara mandal,chairman Raghu Kalidindi , P. Shashank Reddy at Seminar Hall"
   },
   {
-    time: "10:00 AM - 11:00 AM",
-    title: "Speaking Session",
-    description: "Speaker Sessions by Speakers"
+    time: "10:00 AM - 10:30 AM",
+    title: "Idea To Impact",
+    description: "Speaker Sessions by P. Shashank Reddy at Seminar Hall"
   },
   {
-    time: "11:00 AM - 12:30 PM",
+    time: "10:30 AM - 10:50 AM",
+    title: "back bench to launch pad",
+    description: "Speaker Sessions by Mohammed Miskeen at Seminar Hall"
+  },
+  {
+    time: "10:50 AM - 11:30 AM",
+    title: "think beyond the earth- opportunities in space",
+    description: "Speaker Sessions by Vineel Gudson at Seminar Hall"
+  },
+  {
+    time: "11:00 AM - 1:00 PM",
     title: "Model United Nations (MUN)",
-    description: "Dive into the world of economic diplomacy"
+    description: "Venue: Nano Labs"
   },
   {
-    time: "11:00 AM - 12:30 PM",
+    time: "11:00 AM - 1:00 PM",
     title: "IPL Auction",
-    description: "A fun and financial management event"
+    description: "Venue: Nano Labs"
   },
   {
-    time: "11:00 AM - 12:30 PM",
+    time: "11:00 AM - 1:00 PM",
     title: "Be The CEO",
-    description: "Business simulation game"
+    description: "Venue: Nano Labs"
   },
   {
-    time: "11:00 AM - 12:30 PM",
+    time: "11:00 AM - 1:00 PM",
     title: "Elevator Pitch",
-    description: "Pitch your startup idea"
+    description: "Venue: Electro Lounge"
   },
   {
-    time: "11:00 AM - 12:30 PM",
-    title: "Tech Talks",
-    description: "Talks on Emerging trends in technology"
-  },
-  {
-    time: "12:30 PM - 1:20 PM",
+    time: "1:00 PM - 1:40 PM",
     title: "Lunch Break",
     description: "Lunch and networking"
   },
   {
-    time: "1:20 PM - 1:40 PM",
+    time: "1:40 PM - 2:00 PM",
     title: "Standup Comedy",
-    description: "A fun Comedy show"
+    description: "Venue: Open Stage"
   },
   {
-    time: "1:40 PM - 3:30 PM",
+    time: "2:00 PM - 4:00 PM",
     title: "Model United Nations (MUN) S2",
-    description: "Dive into the world of economic diplomacy"
+    description: "Venue: Nano Labs"
   },
   {
-    time: "1:40 PM - 3:30 PM",
+    time: "2:00 PM - 4:00 PM",
     title: "IPL Auction S2",
-    description: "A fun and financial management event"
+    description: "Venue: Nano Labs"
   },
   {
-    time: "1:40 PM - 3:30 PM",
+    time: "2:00 PM - 4:00 PM",
     title: "Be The CEO S2",
-    description: "Business simulation game"
+    description: "Venue: Nano Labs"
   },
   {
-    time: "1:40 PM - 3:30 PM",
+    time: "2:00 PM - 4:00 PM",
     title: "Elevator Pitch S2",
-    description: "Pitch your startup idea"
-  },
-  {
-    time: "1:40 PM - 3:30 PM",
-    title: "Tech Talks S2",
-    description: "Emerging trends in technology"
+    description: "Venue: Electro Lounge"
   },
   {
     time: "10:00 AM - 3:30 PM",
     title: "Startup EXPO/ Project EXPO",
-    description: "Emerging trends in technology"
+    description: "Venue: Walkway"
   }
 ];
 
 const day2: AgendaItem[] = [
   {
-    time: "8:30 AM - 9:30 AM",
+    time: "9:00 AM - 9:30 AM",
     title: "Kits Collection",
-    description: "participants can collect their kits"
+    description: "participants can collect their kits at H&S Entrance"
   },
   {
-    time: "9:30 AM - 11:00 AM",
-    title: "Panel Disscussion",
-    description: "Panel discussion on Entrepreneurship"
+    time: "9:30 AM - 9:50 AM",
+    title: "World of Freelancing",
+    description: "Speaker: Mani Teja"
   },
   {
-    time: "10:00 AM - 10:30 AM",
-    title: "Speaker Sessions",
-    description: "Speaker Sessions by Speakers"
+    time: "9:50 AM - 10:20 AM",
+    title: "Industry of Illusions: Metaverse",
+    description: "Speaker Sessions by Surya Prakash Kuchimanchi"
   },
   {
-    time: "10:30 AM - 1:30 PM",
-    title: "Networking Mixer",
-    description: "Networking and Lunch"
-  }
+    time: "10:20 AM - 11:00 AM",
+    title: "Opportunities In Future Tech",
+    description: "Speaker: Venkata Reddy"
+  },
+  {
+    time: "11:00 AM - 11:40 AM",
+    title: "From Student to Startup: A Campus Stroy ",
+    description: "Speaker: Guhesh Ramanathan"
+  },
+  {
+    time: "11:40 AM - 12:30 PM",
+    title: "E-CONNECT",
+    description: "E-CELL's at Nano Labs"
+  },
+  {
+    time: "12:30 AM - 1:30 PM",
+    title: "Networking Arena & Lunch",
+    description: "Guest Speakers"
+  },
+  {
+    time: "1:30 PM - 4:00 PM",
+    title: "Culturals",
+    description: "Open Stage"
+  },
 ];
 
 const AgendaDay: React.FC<{ day: number; items: AgendaItem[] }> = ({ day, items }) => (
