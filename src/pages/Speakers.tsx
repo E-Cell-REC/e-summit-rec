@@ -6,6 +6,7 @@ import VineelSir from "../assets/speakers/vineelsir.jpg";
 import SuryaSir from "../assets/speakers/SuryaPrakashSir.jpg";
 import ShashankSir from "../assets/speakers/ShashankSir.jpg";
 import imagek from "../assets/speakers/image.png";
+import MuskinSir from "../assets/speakers/MuskinSir.jpg";
 
 const speakers = [
   {
@@ -38,6 +39,11 @@ const speakers = [
     title: "Laiout",
     image: imagek,
   },
+  {
+    name: "Mohammad Muskin",
+    title: "Co-Founder - Career Progression",
+    image: MuskinSir,
+  }
 ];
 
 const Speakers = () => {
