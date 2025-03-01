@@ -114,7 +114,7 @@ export default function ESummitPage() {
       description: "Bridge the gap between talent and opportunity with the Internship Drive!, This initiative connects students with startups, providing them with hands-on experience, real-world learning, and a chance to kickstart their careers in a dynamic environment. Get hired by top tech companies.",
       imageUrl: Internships,
       speakers: "Pavan Teja, Pujitha Marisa",
-      registerLink: "#",
+      registerLink: "https://forms.gle/h9kdMxanbJRtd1gu6",
     },
     {
       date: "02/03/2025",
